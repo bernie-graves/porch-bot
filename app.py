@@ -12,7 +12,7 @@ import subprocess
 load_dotenv()
 
 
-def detect_motion(threshold_area=10000):
+def detect_motion(threshold_area=3000):
     # get camera 
     cam = cv2.VideoCapture(0)
     
@@ -136,7 +136,6 @@ def send_email_with_image(message, image_path):
     # Retrieve email addresses and credentials from .env file
     sender_email = os.getenv('SENDER_EMAIL')
     receiver_email = os.getenv('RECEIVER_EMAIL')
-    password = os.getenv('EMAIL_PASSWORD')
     
     mailtrap_username = os.getenv("MAILTRAP_USERNAME")
     mailtrap_password = os.getenv("MAILTRAP_PASSWORD")
@@ -160,14 +159,11 @@ def send_email_with_image(message, image_path):
 
 def main():
     while True:
-        print("Starting Loop")
-        detect_motion()
-        # add brief pause to take image after movement detected
-        time.sleep(0.25)
-        path = take_image()
-        response = send_request(path)
-        send_email_with_image(response, path)
-    
+	print("Starting Loop")
+	detect_motion()
+	path = take_image()
+	response = send_request(path)
+	send_email_with_image(response, path)
 
 if __name__ == "__main__":
     main()
