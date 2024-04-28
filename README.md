@@ -1,5 +1,18 @@
 # Porch Bot
 
+<p align='center'>
+  Tools Used
+</p>
+
+<p align='center'>
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+    <img src="https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white" />
+    <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" />
+    <img src="https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=Raspberry%20Pi&logoColor=white" />
+    <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
+</p>
+
+
 Porch Bot is an AI powered surveillance program. It detects motion, snaps a pciture and uses [LLaVA](https://ollama.com/library/llava) 
 running locally to describe what is going on in the image. The response and the image are then emailed to you so you can
 know what is going on on your porch. 
