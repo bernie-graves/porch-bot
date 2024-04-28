@@ -12,7 +12,7 @@ import subprocess
 load_dotenv()
 
 
-def detect_motion(threshold_area=3000):
+def detect_motion(threshold_area=5000):
     # get camera 
     cam = cv2.VideoCapture(0)
     
@@ -94,7 +94,9 @@ def send_request(image_path):
     
     prompt = """
         This is a picture of my front door.  I need you to tell
-        me what is going on at my front door. I need to know quickly. 
+        me what is going on at my front door. I already know what time
+	of day it is and what is going on in the background. Just tell me 
+	what the person at my front door is doing. I need to know quickly. 
         It needs to be short, super short, less than 50 words,
         short enough to be a brief text message.
     """
@@ -159,11 +161,11 @@ def send_email_with_image(message, image_path):
 
 def main():
     while True:
-	print("Starting Loop")
-	detect_motion()
-	path = take_image()
-	response = send_request(path)
-	send_email_with_image(response, path)
+        print("Starting Loop")
+        detect_motion()
+        path = take_image()
+        response = send_request(path)
+        send_email_with_image(response, path)
 
 if __name__ == "__main__":
     main()
