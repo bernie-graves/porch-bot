@@ -13,22 +13,47 @@ note your Mailtrap username and password found by clicking the **Sending Domains
 domain, and finally clikcing into the **SMTP/API Settings**. 
 
 ### Clone Repo and Set Up Env
-Clone this repo then create a virtual environment using 
+Clone this repo and open a terminal. Then create a virtual environment using 
 ```
 python -m venv venv
 ```
+Next, you need to activate the virtual environment using one of the following
+MacOS/Linux
+```
+source venv/bin/activate 
+```
+Windows
+```
+venv\Scripts\activate
+```
+
+You will see a `(venv)` at the front of your command line when your wirtual environment is actiavted. Now you 
+need to install the dependencies. This can be done using
+```
+pip install -r requirements.txt
+```
+
+Now create a `.env` file to store some credentials
+```
+SENDER_EMAIL='mailtrap@demomailtrap.com'
+MAILTRAP_EMAIL=[email used to sign up for mailtrap - where you message will be sent] 
+MAILTRAP_USERNAME=[mailtrap username from earlier]
+MAILTRAP_PASSWORD=[mailtrap password from earlier]
+```
 
 ### Downloading Ollama and LLaVA Model
-
-* Download the Ollama library using the following command: `git clone (link unavailable)
-* Download the LLaVA model using the following command: `wget https://.../llava-model.pt`
-
-### Setting up Virtual Environment and Installing Requirements
-
-* Create a virtual environment using the following command: `python -m venv venv`
-* Activate the virtual environment using the following command: `source venv/bin/activate` (on Mac/Linux) or `venv\Scripts\activate` (on Windows)
-* Install the required packages using the following command: `pip install -r requirements.txt`
+To run the LLaVA model locally, [ollama](https://ollama.com/) was used. You need to follow the instructions found [here](https://ollama.com/download)
+to download ollama for your device. Then run the following to download the LLaVA model - it takes up arpund 5GB. 
+```
+ollama pull llava
+```
 
 ### Running the Application
+Now all thats left is to run the script:
+```python app.py```
+This will run until you manually stop it. 
 
-* Run the application using the following command: `python app.py`
+You can contact me at berniejr01@gmail.com with any questions. As of 4/28/2024, 
+I am on the hunt for entry level software engineer positions and would greatly appreciate if you share or star this repo in hopes of getting 
+more eyes on my work. 
+
