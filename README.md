@@ -30,12 +30,12 @@ Clone this repo and open a terminal. Then create a virtual environment using
 ```
 python -m venv venv
 ```
-Next, you need to activate the virtual environment using one of the following
-MacOS/Linux
+Next, you need to activate the virtual environment using one of the following: <br><br>
+**MacOS/Linux**
 ```
 source venv/bin/activate 
 ```
-Windows
+**Windows**
 ```
 venv\Scripts\activate
 ```
@@ -63,7 +63,9 @@ ollama pull llava
 
 ### Running the Application
 Now all thats left is to run the script:
-```python app.py```
+```
+python app.py
+```
 This will run until you manually stop it. 
 
 You can contact me at berniejr01@gmail.com with any questions. As of 4/28/2024, 
